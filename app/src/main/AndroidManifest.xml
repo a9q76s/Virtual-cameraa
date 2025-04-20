@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    
+
     <application
         android:name=".VirtualAppApplication"
         android:allowBackup="true"
@@ -26,7 +26,8 @@
         android:theme="@style/AppTheme"
         android:requestLegacyExternalStorage="true"
         tools:targetApi="29">
-        
+
+        <!-- Main launcher activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -35,46 +36,49 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
+        <!-- Settings activity -->
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
             android:label="@string/camera_settings" />
-        
+
+        <!-- Camera service -->
         <service
             android:name=".CameraService"
             android:enabled="true"
             android:exported="false" />
-        
-        <!-- VirtualApp required components -->
-        <!-- These components are provided by VirtualApp and need to be registered -->
-        
-        <!-- Virtual Activity Components -->
+
+        <!-- VirtualApp stub components -->
+
+        <!-- Stub activity -->
         <activity
             android:name="com.lody.virtual.client.stub.StubActivity$C0"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
             android:process=":p0"
             android:taskAffinity="com.example.virtualcameraa.task.0"
-            android:theme="@style/AppTheme" />
-            
-        <!-- Additional StubActivity declarations would go here (C1-C30) -->
-        
-        <!-- Virtual Service Components -->
+            android:theme="@style/AppTheme"
+            tools:replace="android:taskAffinity,android:theme" />
+
+        <!-- Additional StubActivity declarations (C1–C30) would go here -->
+
+        <!-- Stub service -->
         <service
             android:name="com.lody.virtual.client.stub.StubService$C0"
             android:process=":p0" />
-            
-        <!-- Additional StubService declarations would go here (C1-C30) -->
-        
-        <!-- Virtual Content Provider Components -->
+
+        <!-- Additional StubService declarations (C1–C30) would go here -->
+
+        <!-- Stub content provider -->
         <provider
             android:name="com.lody.virtual.client.stub.StubContentProvider$C0"
             android:authorities="com.example.virtualcameraa.provider_0"
-            android:process=":p0" />
-            
-        <!-- Additional StubContentProvider declarations would go here (C1-C30) -->
-        
-        <!-- Broadcast Receivers -->
+            android:process=":p0"
+            tools:replace="android:authorities" />
+
+        <!-- Additional StubContentProvider declarations (C1–C30) would go here -->
+
+        <!-- Broadcast receivers -->
         <receiver
             android:name="com.lody.virtual.client.stub.StubPendingReceiver"
             android:exported="false">
@@ -82,7 +86,7 @@
                 <action android:name="com.lody.virtual.action.pending_receiver" />
             </intent-filter>
         </receiver>
-        
+
         <receiver
             android:name="com.lody.virtual.client.stub.InnerReceiver"
             android:exported="false">
@@ -94,9 +98,9 @@
                 <action android:name="com.lody.virtual.action.DELEGATE_PENDING_INTENT" />
             </intent-filter>
         </receiver>
-        
+
         <!-- Other VirtualApp required components would be added here -->
-        
+
     </application>
 
 </manifest>
