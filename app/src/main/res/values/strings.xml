@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Virtual Camera App</string>
+    <string name="app_icon_description">App icon</string>
+    <string name="settings">Settings</string>
+    <string name="camera_settings">Camera Settings</string>
+    <string name="camera_source_type">Camera Source Type</string>
+    <string name="image_source">Image (Static)</string>
+    <string name="video_source">Video (Loop)</string>
+    <string name="stream_source">Stream (Live)</string>
+    <string name="current_image">Current Image</string>
+    <string name="current_video">Current Video</string>
+    <string name="select_image">Select Image</string>
+    <string name="select_video">Select Video</string>
+    <string name="save_settings">Save Settings</string>
+</resources>

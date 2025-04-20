@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.virtualcameraa">
+
+    <!-- Original VirtualCameraa permissions -->
+    <!-- Add any permissions from the original project here -->
+
+    <!-- VirtualApp required permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    
+    <application
+        android:name=".VirtualAppApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="29">
+        
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/camera_settings" />
+        
+        <service
+            android:name=".CameraService"
+            android:enabled="true"
+            android:exported="false" />
+        
+        <!-- VirtualApp required components -->
+        <!-- These components are provided by VirtualApp and need to be registered -->
+        
+        <!-- Virtual Activity Components -->
+        <activity
+            android:name="com.lody.virtual.client.stub.StubActivity$C0"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
+            android:process=":p0"
+            android:taskAffinity="com.example.virtualcameraa.task.0"
+            android:theme="@style/AppTheme" />
+            
+        <!-- Additional StubActivity declarations would go here (C1-C30) -->
+        
+        <!-- Virtual Service Components -->
+        <service
+            android:name="com.lody.virtual.client.stub.StubService$C0"
+            android:process=":p0" />
+            
+        <!-- Additional StubService declarations would go here (C1-C30) -->
+        
+        <!-- Virtual Content Provider Components -->
+        <provider
+            android:name="com.lody.virtual.client.stub.StubContentProvider$C0"
+            android:authorities="com.example.virtualcameraa.provider_0"
+            android:process=":p0" />
+            
+        <!-- Additional StubContentProvider declarations would go here (C1-C30) -->
+        
+        <!-- Broadcast Receivers -->
+        <receiver
+            android:name="com.lody.virtual.client.stub.StubPendingReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.lody.virtual.action.pending_receiver" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver
+            android:name="com.lody.virtual.client.stub.InnerReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="com.lody.virtual.action.DELEGATE_PENDING_INTENT" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- Other VirtualApp required components would be added here -->
+        
+    </application>
+
+</manifest>

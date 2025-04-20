@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Camera Settings"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/rb_use_real"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use Real Camera"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rb_use_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use Video File"/>
+
+        <RadioButton
+            android:id="@+id/rb_use_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use Image"/>
+
+        <RadioButton
+            android:id="@+id/rb_use_stream"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Use Stream URL"/>
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_stream_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Stream URL"
+        android:inputType="textUri"
+        android:layout_marginBottom="16dp"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/btn_select_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Video File"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btn_select_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Image File"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Settings"/>
+
+</LinearLayout>
